@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProgramController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,9 @@ Route::prefix('category')->group(function () {
 });
 
 Route::get('news/{slug?}', [NewsController::class, 'show']);
+
+Route::prefix('program')->group(function () {
+    Route::get('karir', [ProgramController::class, 'karir']);
+    Route::get('magang', [ProgramController::class, 'magang']);
+    Route::get('kunjungan-industri', [ProgramController::class, 'kunjungan']);
+});
