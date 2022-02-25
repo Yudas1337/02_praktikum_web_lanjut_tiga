@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
@@ -36,3 +37,5 @@ Route::prefix('program')->group(function () {
 });
 
 Route::get('about-us', [AboutController::class, 'about']);
+
+Route::resource('contact-us', ContactController::class)->only('store');
