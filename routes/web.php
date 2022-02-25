@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,5 @@ Route::prefix('category')->group(function () {
     Route::get('riri-story-books', [ProductController::class, 'storyBooks']);
     Route::get('kolak-kids-songs', [ProductController::class, 'kidsSongs']);
 });
+
+Route::get('news/{slug?}', [NewsController::class, 'show']);
