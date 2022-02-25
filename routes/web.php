@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
@@ -33,3 +34,5 @@ Route::prefix('program')->group(function () {
     Route::get('magang', [ProgramController::class, 'magang']);
     Route::get('kunjungan-industri', [ProgramController::class, 'kunjungan']);
 });
+
+Route::get('about-us', [AboutController::class, 'about']);
